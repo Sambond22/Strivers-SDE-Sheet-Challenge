@@ -1,0 +1,21 @@
+#include bitsstdc++.h
+
+int modularExponentiation(int x, int n, int m) {
+	 Write your code here.
+long long ans=1,xy=x;
+while(n0){
+	
+if(n%2==1){
+	ans=xy;
+	ans%=m;
+}
+
+	n=2;
+	xy=xy;
+	xy%=m;
+
+}
+
+
+return (int)ans;
+}

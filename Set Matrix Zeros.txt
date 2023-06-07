@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+void setZeros(vector<vector<int>> &matrix)
+{
+	// Write your code here.
+	int n=matrix[0].size();
+	int m=matrix.size();
+vector<int>v;
+	for(int i=0;i<m;i++){
+		for(int j=0;j<n;j++){
+			if(matrix[i][j]==0){
+				v.push_back(i);
+								v.push_back(j);
+
+			}
+		}
+	}
+	for(int i=0;i<v.size();i+=2){
+		int index=v[i];
+		int nxtinx=v[i+1];
+
+	for(int i=0;i<m;i++){
+		matrix[i][nxtinx]=0;
+	}
+	for(int i=0;i<n;i++){
+		matrix[index][i]=0;
+	}
+
+	}
+	return;
+}
