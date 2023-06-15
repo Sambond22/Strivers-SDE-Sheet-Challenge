@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+vector<long long int>pascal(int n){
+  vector<long long int>v;
+  v.push_back(1);
+  long long int ans=1;
+  for(int i=1;i<n;i++){
+    ans*=(n-i);
+    ans/=i;
+    v.push_back(ans);
+  }
+  return v;
+}
+vector<vector<long long int>> printPascal(int n) 
+{
+  // Write your code here.
+  long long ans=1;
+  vector<long long int>v;
+  v.push_back(1);
+  vector<vector<long long int>>vv;
+  vv.push_back(v);
+  
+  for(int i=2;i<=n;i++){
+    vv.push_back(pascal(i));
+  }
+  return vv;
+  
+  
+}
