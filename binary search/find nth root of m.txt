@@ -1,0 +1,14 @@
+int NthRoot(int n, int m) {
+  // Write your code here.
+  for(int i=1;i<1e8;i++){
+    long long a=pow(i,n);
+    if(a==m){
+      return i;
+    }
+    if(a>m){
+      return -1;
+    }
+  }}
+  
+  
+
