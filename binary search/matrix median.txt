@@ -1,0 +1,33 @@
+int bs(vector<int>&v, int mid){
+    int st=0,end=v.size()-1;
+    while(st<=end){
+        int m=(st+end)/2;
+        if(v[m]<=mid){
+            st=m+1;
+        }
+        else{
+            end=m-1;
+        }
+    }
+    return st;
+}
+
+int getMedian(vector<vector<int>> &matrix)
+{
+int m=matrix.size(),n=matrix[0].size();
+int st=0,end=1e9;
+while(st<=end){
+    int mid=st+(end-st)/2;
+    int count=0;
+    for(int i=0;i<m;i++){
+        count+=bs(matrix[i],mid);
+    }
+    if(count<=(m*n)/2){
+        st=mid+1;
+    }
+    else{
+        end=mid-1;
+    }
+}
+return st;
+}
